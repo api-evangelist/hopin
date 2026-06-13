@@ -1,0 +1,91 @@
+plans:
+  - name: Free Trial
+    description: >-
+      30-day trial providing access to most core functionality with limited
+      registrations. Includes 10 organizer seats and up to 1,000 registrations.
+      No API access is included in the trial plan.
+    url: https://www.ringcentral.com/pricing/events.html
+    price: 0.00
+    currency: USD
+    unit: trial
+    features:
+      - Core event functionality
+      - 10 organizer seats
+      - Up to 1,000 registrations
+      - Virtual event support
+      - Basic analytics
+    limitations:
+      - No API access
+      - Limited to 30 days
+      - Limited registrations
+
+  - name: Events Pro
+    description: >-
+      The essentials to host unlimited virtual events and webinars with ease.
+      Billed per organizer per month, with annual billing available at a
+      discount of up to 16%.
+    url: https://www.ringcentral.com/pricing/events.html
+    price: 119.00
+    annualPrice: 99.00
+    currency: USD
+    unit: organizer/month
+    features:
+      - Unlimited events and registrations
+      - Unlimited attendees (no overage charges)
+      - Virtual event support
+      - Webinar support
+      - Comprehensive event analytics
+      - Real-time dashboards
+      - AI-powered content generation
+      - Automated Q&A categorization
+      - Post-event content creation
+    limitations:
+      - No API access
+      - No hybrid/onsite event support
+      - No SSO
+      - No dedicated account manager
+
+  - name: Events Pro+
+    description: >-
+      Everything in Events Pro, plus hybrid and onsite event support, over 40
+      app integrations, single sign-on (SSO), and a dedicated account manager.
+    url: https://www.ringcentral.com/pricing/events.html
+    price: 239.00
+    currency: USD
+    unit: organizer/month
+    features:
+      - Everything in Events Pro
+      - Hybrid and onsite event support
+      - 40+ app integrations (HubSpot, Marketo, Salesforce, Mailchimp)
+      - Single sign-on (SSO)
+      - Dedicated account manager
+      - CRM integrations
+      - AI features
+    limitations:
+      - No API access
+      - No Content hubs
+      - No custom domains
+      - No Lead Retrieval credits
+
+  - name: Events Enterprise
+    description: >-
+      Everything in Pro+, plus unlimited Lead Retrieval credits, API access,
+      Content hubs, custom domains, and assisted implementation and onboarding.
+      API access allows integration with the RingCentral Events External API
+      for managing events, registrations, sessions, reports, and more.
+    url: https://www.ringcentral.com/pricing/events.html
+    price: 359.00
+    currency: USD
+    unit: organizer/month
+    features:
+      - Everything in Events Pro+
+      - API access (External REST API)
+      - Unlimited Lead Retrieval credits
+      - Content hubs
+      - Custom domains
+      - Assisted implementation and onboarding
+      - Data subscription webhooks
+      - OAuth 2.0 authentication
+      - Postman collection access
+    apiAccess: true
+    contact: https://www.ringcentral.com/pricing/events.html

@@ -1,0 +1,48 @@
+rateLimits:
+  description: >-
+    RingCentral Events External API rate limit details are not publicly
+    documented on the developer portal. Rate limits are managed per
+    organization and enforced at the API gateway level. For specific rate
+    limit thresholds, contact RingCentral Events enterprise support or refer
+    to the developer portal at developer.events.ringcentral.com.
+  url: https://developer.events.ringcentral.com/external-api
+  notes: >-
+    API access is only available on the Enterprise plan. Rate limits are
+    expected to align with enterprise-tier usage. The broader RingCentral
+    platform uses API Groups to assign rate limits based on common usage
+    patterns per API endpoint. Contact your account manager for Events-specific
+    rate limit details.
+  tiers:
+    - plan: Events Enterprise
+      description: >-
+        Enterprise plan API usage. Specific rate limits are not publicly
+        disclosed; contact RingCentral Events support for details.
+      rateLimit: contact-sales
+      unit: requests
+      window: per-minute
+      retryAfter: true
+      headers:
+        - name: X-Rate-Limit-Remaining
+          description: Number of API calls remaining in current window (if provided)
+        - name: Retry-After
+          description: Seconds to wait before retrying after a 429 response
+  httpStatusCodes:
+    - code: 200
+      description: Success
+    - code: 400
+      description: Bad Request — invalid parameters or request body
+    - code: 401
+      description: Unauthorized — invalid or expired OAuth token
+    - code: 403
+      description: Forbidden — insufficient permissions or plan does not include API access
+    - code: 404
+      description: Not Found — resource does not exist
+    - code: 429
+      description: Too Many Requests — rate limit exceeded
+    - code: 500
+      description: Internal Server Error
+  references:
+    - name: RingCentral Events Developer Portal
+      url: https://developer.events.ringcentral.com/external-api
+    - name: RingCentral API Rate Limits (general platform)
+      url: https://developers.ringcentral.com/guide/basics/rate-limits

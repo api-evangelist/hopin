@@ -1,0 +1,95 @@
+name: RingCentral Events
+description: >-
+  RingCentral Events (formerly Hopin) is a virtual and hybrid event management
+  platform with REST APIs for managing organizations, events, sessions, stages,
+  booths, registrations, attendees, tickets, reports, and data subscriptions.
+  Acquired by RingCentral from Hopin in August 2023, the platform enables
+  planning and producing engaging virtual, hybrid, and in-person event
+  experiences. API access is available on the Enterprise plan.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Events
+  - Virtual Events
+  - Hybrid Events
+  - Webinars
+  - Event Management
+  - Registration
+  - Sessions
+  - Networking
+url: https://raw.githubusercontent.com/api-evangelist/hopin/refs/heads/main/apis.yml
+created: '2024-01-01'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+apis:
+  - name: RingCentral Events API
+    description: >-
+      The RingCentral Events External API provides programmatic access to
+      manage organizations, events, sessions, stages, booths, registrations,
+      tickets, magic links, reports, schedule items, tags, and data
+      subscriptions. Authentication uses OAuth 2.0 with client credentials.
+      API access is restricted to the Enterprise plan. The base URL is
+      https://api.events.ringcentral.com.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.events.ringcentral.com/external-api
+    baseURL: https://api.events.ringcentral.com
+    tags:
+      - Events
+      - Organizations
+      - Sessions
+      - Registrations
+      - Booths
+      - Tickets
+      - Reports
+      - Webhooks
+    properties:
+      - type: Documentation
+        url: https://developer.events.ringcentral.com/external-api
+      - type: PostmanCollection
+        url: https://github.com/hopin-team/hopin-external-api-collection
+      - type: OAuthSample
+        url: https://github.com/hopin-team/rce-external-api-oauth-sample
+      - type: Changelog
+        url: https://developer.events.ringcentral.com/external-api/changelog
+      - type: ReleaseNotes
+        url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+      - type: Status
+        url: https://status.ringcentral.com/
+      - type: Pricing
+        url: https://www.ringcentral.com/pricing/events.html
+      - type: Plans
+        url: plans/plans.yml
+      - type: RateLimits
+        url: rate-limits/rate-limits.yml
+      - type: FinOps
+        url: finops/finops.yml
+    contact:
+      - FN: RingCentral Events Developer Support
+        url: https://developer.events.ringcentral.com/
+        email: ''
+common:
+  - type: GitHubOrganization
+    url: https://github.com/hopin-team
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: Portal
+    url: https://developer.events.ringcentral.com/
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: Authentication
+    url: https://developer.events.ringcentral.com/external-api/guides/authentication
+  - type: Changelog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Blog
+    url: https://www.ringcentral.com/us/en/blog/
+  - type: Support
+    url: https://events-support.ringcentral.com/
+maintainers:
+  - FN: API Evangelist
+    url: https://apievangelist.com
+    email: info@apievangelist.com

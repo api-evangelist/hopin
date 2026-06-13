@@ -1,0 +1,79 @@
+finops:
+  description: >-
+    RingCentral Events (formerly Hopin) uses a per-organizer per-month pricing
+    model. API access is an Enterprise-only feature. Costs scale with the
+    number of organizers in your organization. There are no attendee overage
+    charges and no per-event fees. Annual billing provides up to 16% savings
+    over monthly billing.
+  url: https://www.ringcentral.com/pricing/events.html
+  model: per-organizer
+  currency: USD
+  billingCycles:
+    - monthly
+    - annual
+  annualDiscount: 16%
+  plans:
+    - name: Free Trial
+      monthlyPrice: 0.00
+      annualPrice: 0.00
+      apiAccess: false
+      notes: 30-day trial, 10 organizer seats, 1,000 registrations max
+
+    - name: Events Pro
+      monthlyPrice: 119.00
+      annualPrice: 99.00
+      apiAccess: false
+      notes: Unlimited events, registrations, and attendees; virtual and webinar only
+
+    - name: Events Pro+
+      monthlyPrice: 239.00
+      apiAccess: false
+      notes: >-
+        Adds hybrid/onsite events, 40+ integrations, SSO, dedicated account
+        manager
+
+    - name: Events Enterprise
+      monthlyPrice: 359.00
+      apiAccess: true
+      notes: >-
+        Adds External REST API access, unlimited Lead Retrieval, Content hubs,
+        custom domains, and onboarding assistance. OAuth 2.0 authentication.
+        Contact sales for volume pricing on large organizer counts.
+
+  costDrivers:
+    - name: Number of organizers
+      description: >-
+        Primary cost driver; each organizer seat is billed monthly or annually.
+        Organizers can create and manage events; attendees are free and unlimited.
+    - name: Plan tier
+      description: >-
+        API access requires the Enterprise plan ($359/organizer/month). Lower
+        tiers do not include API access.
+    - name: Annual vs monthly billing
+      description: >-
+        Annual billing saves up to 16% compared to month-to-month billing.
+
+  costOptimization:
+    - tip: Choose annual billing to save up to 16% over monthly pricing.
+    - tip: >-
+        Audit organizer seat count regularly; remove seats for users who no
+        longer require organizer access to reduce per-seat costs.
+    - tip: >-
+        API access requires the Enterprise plan. Evaluate whether API
+        integration justifies the Enterprise tier upgrade over Pro+.
+    - tip: >-
+        Use the 30-day free trial to validate the platform before committing
+        to a paid plan.
+
+  noExtraCharges:
+    - Attendees are unlimited with no overage fees
+    - No per-event fees
+    - No per-registration fees on paid plans
+
+  references:
+    - name: RingCentral Events Pricing Page
+      url: https://www.ringcentral.com/pricing/events.html
+    - name: RingCentral Events User-Based Pricing (new)
+      url: https://events-support.ringcentral.com/hc/en-us/articles/36156084217748
+    - name: Upgrading to Events Pro, Pro+ or Enterprise plan
+      url: https://events-support.ringcentral.com/hc/en-us/articles/23690841625620
