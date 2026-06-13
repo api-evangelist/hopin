@@ -1,0 +1,101 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "rce": "https://developer.events.ringcentral.com/external-api/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Organization": "Organization",
+    "Event": "Event",
+    "Registration": "rce:Registration",
+    "Ticket": "rce:Ticket",
+    "Booth": "rce:Booth",
+    "Session": "rce:Session",
+    "Stage": "rce:Stage",
+    "MagicLink": "rce:MagicLink",
+    "Report": "rce:Report",
+    "Tag": "rce:Tag",
+    "DataSubscription": "rce:DataSubscription",
+    "ScheduleItem": "rce:ScheduleItem",
+    "Template": "rce:Template",
+
+    "id": "@id",
+    "name": "name",
+    "description": "description",
+    "slug": "rce:slug",
+    "status": "rce:status",
+    "email": "email",
+    "url": "url",
+    "image": "image",
+
+    "organization_id": {
+      "@id": "rce:organization",
+      "@type": "@id"
+    },
+    "event_id": {
+      "@id": "rce:event",
+      "@type": "@id"
+    },
+    "ticket_id": {
+      "@id": "rce:ticket",
+      "@type": "@id"
+    },
+
+    "start_at": {
+      "@id": "startDate",
+      "@type": "xsd:dateTime"
+    },
+    "end_at": {
+      "@id": "endDate",
+      "@type": "xsd:dateTime"
+    },
+    "created_at": {
+      "@id": "dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "updated_at": {
+      "@id": "dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "expires_at": {
+      "@id": "rce:expiresAt",
+      "@type": "xsd:dateTime"
+    },
+
+    "price": "price",
+    "currency": "priceCurrency",
+    "capacity": "maximumAttendeeCapacity",
+    "available": "remainingAttendeeCapacity",
+
+    "first_name": "givenName",
+    "last_name": "familyName",
+    "timezone": "rce:timezone",
+    "language": "inLanguage",
+    "logo_url": "logo",
+    "website_url": "sameAs",
+    "webhook_url": "rce:webhookUrl",
+    "download_url": "rce:downloadUrl",
+    "active": "rce:active",
+    "used": "rce:used",
+
+    "data": "rce:items",
+    "pagination": "rce:pagination",
+    "total": "rce:total",
+    "page": "rce:page",
+    "per_page": "rce:perPage",
+    "total_pages": "rce:totalPages",
+
+    "events": "rce:subscribedEvents",
+    "speakers": "rce:speakers",
+    "custom_fields": "rce:customFields"
+  },
+  "@type": "rce:ApiContext",
+  "rce:apiTitle": "RingCentral Events API",
+  "rce:apiVersion": "1.0.0",
+  "rce:baseUrl": "https://api.events.ringcentral.com",
+  "rce:documentation": "https://developer.events.ringcentral.com/external-api",
+  "rce:provider": {
+    "@type": "Organization",
+    "name": "RingCentral",
+    "url": "https://www.ringcentral.com"
+  }
+}

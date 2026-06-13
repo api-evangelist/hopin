@@ -1,0 +1,33 @@
+{
+  "summary": "Create a Magic Link",
+  "description": "Generate a single-use login link for a ticket holder.",
+  "request": {
+    "method": "POST",
+    "url": "https://api.events.ringcentral.com/v1/tickets/{ticketId}/magicLinks",
+    "headers": {
+      "Authorization": "Bearer {access_token}",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    "parameters": {
+      "ticketId": "tkt_001"
+    },
+    "body": {
+      "registration_id": "reg_xyz789",
+      "expires_in": 86400
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "id": "ml_abc456",
+      "ticket_id": "tkt_001",
+      "url": "https://app.events.ringcentral.com/join?token=eyJhbGciOiJIUzI1NiJ9...",
+      "expires_at": "2024-09-14T14:30:00Z",
+      "used": false
+    }
+  }
+}

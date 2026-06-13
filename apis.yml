@@ -42,6 +42,12 @@ apis:
       - Reports
       - Webhooks
     properties:
+      - type: OpenAPI
+        url: openapi/openapi.json
+      - type: JSONSchema
+        url: json-schema/ringcentral-events-schema.json
+      - type: JSONLDContext
+        url: json-ld/ringcentral-events-context.jsonld
       - type: Documentation
         url: https://developer.events.ringcentral.com/external-api
       - type: PostmanCollection

@@ -1,0 +1,231 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/hopin/main/json-schema/ringcentral-events-schema.json",
+  "title": "RingCentral Events API Schema",
+  "description": "JSON Schema definitions for the RingCentral Events API resources.",
+  "definitions": {
+    "Organization": {
+      "type": "object",
+      "title": "Organization",
+      "description": "A RingCentral Events organization.",
+      "properties": {
+        "id": { "type": "string", "description": "Unique organization identifier." },
+        "name": { "type": "string", "description": "Organization display name." },
+        "slug": { "type": "string", "description": "URL-friendly organization slug." },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name"]
+    },
+    "Event": {
+      "type": "object",
+      "title": "Event",
+      "description": "A virtual, hybrid, or in-person event.",
+      "properties": {
+        "id": { "type": "string", "description": "Unique event identifier." },
+        "name": { "type": "string", "description": "Event name." },
+        "slug": { "type": "string", "description": "URL-friendly event slug." },
+        "description": { "type": "string" },
+        "start_at": { "type": "string", "format": "date-time", "description": "Event start time (UTC)." },
+        "end_at": { "type": "string", "format": "date-time", "description": "Event end time (UTC)." },
+        "organization_id": { "type": "string" },
+        "status": { "type": "string", "enum": ["draft", "live", "ended", "cancelled"] },
+        "timezone": { "type": "string" },
+        "language": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "organization_id"]
+    },
+    "Registration": {
+      "type": "object",
+      "title": "Registration",
+      "description": "An attendee registration for an event.",
+      "properties": {
+        "id": { "type": "string" },
+        "event_id": { "type": "string" },
+        "ticket_id": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "cancelled", "checked_in"] },
+        "email": { "type": "string", "format": "email" },
+        "first_name": { "type": "string" },
+        "last_name": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "event_id", "email"]
+    },
+    "Ticket": {
+      "type": "object",
+      "title": "Ticket",
+      "description": "An event ticket type.",
+      "properties": {
+        "id": { "type": "string" },
+        "event_id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number", "minimum": 0 },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "capacity": { "type": "integer", "minimum": 0 },
+        "available": { "type": "integer", "minimum": 0 },
+        "created_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "event_id", "name"]
+    },
+    "Booth": {
+      "type": "object",
+      "title": "Booth",
+      "description": "An expo booth within an event.",
+      "properties": {
+        "id": { "type": "string" },
+        "event_id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "logo_url": { "type": "string", "format": "uri" },
+        "website_url": { "type": "string", "format": "uri" }
+      },
+      "required": ["id", "event_id", "name"]
+    },
+    "Session": {
+      "type": "object",
+      "title": "Session",
+      "description": "A scheduled session within an event.",
+      "properties": {
+        "id": { "type": "string" },
+        "event_id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "start_at": { "type": "string", "format": "date-time" },
+        "end_at": { "type": "string", "format": "date-time" },
+        "speakers": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["id", "event_id", "name"]
+    },
+    "Stage": {
+      "type": "object",
+      "title": "Stage",
+      "description": "A main stage area in an event.",
+      "properties": {
+        "id": { "type": "string" },
+        "event_id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "stream_url": { "type": "string", "format": "uri" }
+      },
+      "required": ["id", "event_id", "name"]
+    },
+    "MagicLink": {
+      "type": "object",
+      "title": "MagicLink",
+      "description": "A single-use login link for an attendee.",
+      "properties": {
+        "id": { "type": "string" },
+        "ticket_id": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "expires_at": { "type": "string", "format": "date-time" },
+        "used": { "type": "boolean" }
+      },
+      "required": ["id", "ticket_id", "url"]
+    },
+    "Report": {
+      "type": "object",
+      "title": "Report",
+      "description": "An event analytics report.",
+      "properties": {
+        "id": { "type": "string" },
+        "event_id": { "type": "string" },
+        "type": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "processing", "ready", "failed"] },
+        "download_url": { "type": "string", "format": "uri" },
+        "created_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "event_id", "type"]
+    },
+    "Tag": {
+      "type": "object",
+      "title": "Tag",
+      "description": "A label tag for organizing event resources.",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "color": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "DataSubscription": {
+      "type": "object",
+      "title": "DataSubscription",
+      "description": "A webhook subscription for event data.",
+      "properties": {
+        "id": { "type": "string" },
+        "event_id": { "type": "string" },
+        "webhook_url": { "type": "string", "format": "uri" },
+        "events": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of event types to subscribe to."
+        },
+        "active": { "type": "boolean" },
+        "created_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "event_id", "webhook_url"]
+    },
+    "ScheduleItem": {
+      "type": "object",
+      "title": "ScheduleItem",
+      "description": "An item on the event schedule/agenda.",
+      "properties": {
+        "id": { "type": "string" },
+        "event_id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "start_at": { "type": "string", "format": "date-time" },
+        "end_at": { "type": "string", "format": "date-time" },
+        "location": { "type": "string" }
+      },
+      "required": ["id", "event_id", "name"]
+    },
+    "Template": {
+      "type": "object",
+      "title": "Template",
+      "description": "An event template for quick event creation.",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "organization_id": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "Error": {
+      "type": "object",
+      "title": "Error",
+      "description": "API error response.",
+      "properties": {
+        "error": { "type": "string" },
+        "message": { "type": "string" },
+        "status": { "type": "integer" }
+      },
+      "required": ["error", "message"]
+    },
+    "PaginatedResponse": {
+      "type": "object",
+      "title": "PaginatedResponse",
+      "description": "A paginated list response.",
+      "properties": {
+        "data": { "type": "array", "items": {} },
+        "pagination": {
+          "type": "object",
+          "properties": {
+            "total": { "type": "integer" },
+            "page": { "type": "integer" },
+            "per_page": { "type": "integer" },
+            "total_pages": { "type": "integer" }
+          }
+        }
+      }
+    }
+  }
+}

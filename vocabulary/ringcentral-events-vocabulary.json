@@ -1,0 +1,113 @@
+{
+  "title": "RingCentral Events API Vocabulary",
+  "description": "Domain vocabulary and terminology for the RingCentral Events (formerly Hopin) platform.",
+  "version": "1.0.0",
+  "source": "https://developer.events.ringcentral.com/external-api",
+  "terms": [
+    {
+      "term": "Organization",
+      "definition": "A top-level account entity in RingCentral Events that owns events, templates, and settings. Corresponds to a company or team using the platform.",
+      "type": "resource",
+      "endpoint": "/v1/organizations"
+    },
+    {
+      "term": "Event",
+      "definition": "A virtual, hybrid, or in-person event hosted on the RingCentral Events platform. Events contain sessions, stages, booths, registrations, and tickets.",
+      "type": "resource",
+      "endpoint": "/v1/events"
+    },
+    {
+      "term": "Registration",
+      "definition": "A record of an attendee signing up for an event. Contains attendee details, ticket assignment, and check-in status.",
+      "type": "resource",
+      "endpoint": "/v1/registrations"
+    },
+    {
+      "term": "Ticket",
+      "definition": "A ticket type for an event that defines pricing, capacity, and access permissions. Attendees hold tickets when registered.",
+      "type": "resource",
+      "endpoint": "/v1/tickets"
+    },
+    {
+      "term": "Booth",
+      "definition": "A virtual expo booth within an event where sponsors or exhibitors can showcase products and engage with attendees.",
+      "type": "resource",
+      "endpoint": "/v1/booths"
+    },
+    {
+      "term": "Session",
+      "definition": "A scheduled breakout session or workshop within an event. Sessions have speakers, start/end times, and may have limited capacity.",
+      "type": "resource",
+      "endpoint": "/v1/sessions"
+    },
+    {
+      "term": "Stage",
+      "definition": "The main stage area of a virtual event where keynotes and main presentations are broadcast to all attendees.",
+      "type": "resource",
+      "endpoint": "/v1/stages"
+    },
+    {
+      "term": "Magic Link",
+      "definition": "A single-use, time-limited URL that allows an attendee to access an event without requiring a separate login. Used for seamless attendee onboarding.",
+      "type": "resource",
+      "endpoint": "/v1/magicLinks"
+    },
+    {
+      "term": "Report",
+      "definition": "An analytics report generated for an event, covering attendee data, engagement metrics, and other event statistics. Reports are available for download.",
+      "type": "resource",
+      "endpoint": "/v1/reports"
+    },
+    {
+      "term": "Tag",
+      "definition": "A label that can be applied to booths and other resources to categorize and filter them within an event.",
+      "type": "resource",
+      "endpoint": "/v1/tags"
+    },
+    {
+      "term": "Data Subscription",
+      "definition": "A webhook subscription that sends real-time event data updates to a specified URL. Used to integrate RingCentral Events data with external systems.",
+      "type": "resource",
+      "endpoint": "/v1/dataSubscriptions"
+    },
+    {
+      "term": "Schedule Item",
+      "definition": "An item on the event agenda/schedule, representing any time-blocked activity, session, or break during the event.",
+      "type": "resource",
+      "endpoint": "/v1/scheduleItems"
+    },
+    {
+      "term": "Template",
+      "definition": "A reusable event template that pre-configures event settings, design, and structure for quick event creation.",
+      "type": "resource",
+      "endpoint": "/v1/templates"
+    },
+    {
+      "term": "Bank Question",
+      "definition": "A custom registration question associated with a ticket type, used to collect additional attendee information during registration.",
+      "type": "resource",
+      "endpoint": "/v1/bankQuestions"
+    },
+    {
+      "term": "OAuth 2.0 Client Credentials",
+      "definition": "The authentication method used by the RingCentral Events API. Client applications obtain access tokens using their client ID and client secret.",
+      "type": "concept"
+    },
+    {
+      "term": "Enterprise Plan",
+      "definition": "The subscription tier required to access the RingCentral Events External API. Lower-tier plans do not have API access.",
+      "type": "concept"
+    },
+    {
+      "term": "Duplication",
+      "definition": "The process of copying an existing event to create a new event with the same structure and settings.",
+      "type": "operation",
+      "endpoint": "/v1/events/{eventId}/duplications"
+    },
+    {
+      "term": "Check-in",
+      "definition": "The process of marking an attendee as having arrived and joined an event. Registration status changes to checked_in.",
+      "type": "concept"
+    }
+  ]
+}

@@ -1,0 +1,2198 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "RingCentral Events API",
+    "description": "The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "RingCentral Events Developer Support",
+      "url": "https://developer.events.ringcentral.com/"
+    },
+    "license": {
+      "name": "Proprietary"
+    },
+    "termsOfService": "https://developer.events.ringcentral.com/external-api"
+  },
+  "servers": [
+    {
+      "url": "https://api.events.ringcentral.com",
+      "description": "RingCentral Events Production API"
+    }
+  ],
+  "externalDocs": {
+    "description": "RingCentral Events API Documentation",
+    "url": "https://developer.events.ringcentral.com/external-api"
+  },
+  "tags": [
+    {
+      "name": "Health",
+      "description": "Health check endpoints"
+    },
+    {
+      "name": "Organizations",
+      "description": "Organization management"
+    },
+    {
+      "name": "Events",
+      "description": "Event management"
+    },
+    {
+      "name": "Registrations",
+      "description": "Event registration management"
+    },
+    {
+      "name": "Booths",
+      "description": "Booth management"
+    },
+    {
+      "name": "Reports",
+      "description": "Event reporting"
+    },
+    {
+      "name": "Tags",
+      "description": "Tag management"
+    },
+    {
+      "name": "Data Subscriptions",
+      "description": "Data subscription webhooks"
+    },
+    {
+      "name": "Schedule Items",
+      "description": "Event schedule management"
+    },
+    {
+      "name": "Sessions",
+      "description": "Event session management"
+    },
+    {
+      "name": "Stages",
+      "description": "Event stage management"
+    },
+    {
+      "name": "Magic Links",
+      "description": "Magic link management"
+    },
+    {
+      "name": "Tickets",
+      "description": "Ticket management"
+    },
+    {
+      "name": "Templates",
+      "description": "Event template management"
+    },
+    {
+      "name": "Bank Questions",
+      "description": "Bank question management"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "description": "OAuth 2.0 Client Credentials flow",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://api.events.ringcentral.com/v1/auth/token",
+            "scopes": {
+              "read": "Read access to resources",
+              "write": "Write access to resources"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Organization": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Organization identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Organization name"
+          },
+          "slug": {
+            "type": "string",
+            "description": "Organization slug"
+          }
+        }
+      },
+      "Event": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Event identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Event name"
+          },
+          "slug": {
+            "type": "string",
+            "description": "Event slug"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "Registration": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Registration identifier"
+          },
+          "event_id": {
+            "type": "string"
+          },
+          "ticket_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          }
+        }
+      },
+      "Ticket": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Ticket identifier"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "capacity": {
+            "type": "integer"
+          }
+        }
+      },
+      "Booth": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "Session": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Stage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "MagicLink": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "ticket_id": {
+            "type": "string"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Report": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "download_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "Tag": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "DataSubscription": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "event_id": {
+            "type": "string"
+          },
+          "webhook_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ScheduleItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Template": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/v1/health": {
+      "get": {
+        "summary": "Health Check",
+        "operationId": "Health_Check",
+        "description": "Use this endpoint for checking health of API service",
+        "tags": [
+          "Health"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/organizations": {
+      "get": {
+        "summary": "Retrieve the list of Organizations property of the user",
+        "operationId": "Retrieve_the_list_of_Organizations_property_of_the_user",
+        "description": "Retrieve the list of Organizations property of the user",
+        "tags": [
+          "Organizations"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/organizations/{organizationId}": {
+      "get": {
+        "summary": "Retrieve the details of the Organization",
+        "operationId": "Retrieve_the_details_of_the_Organization",
+        "description": "Retrieve the details of the Organization",
+        "tags": [
+          "Organizations"
+        ],
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "organizationId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/tickets/{ticketId}/bankQuestions": {
+      "get": {
+        "summary": "Returns the list of bank questions for given ticket type",
+        "operationId": "Returns_the_list_of_bank_questions_for_given_ticket_type",
+        "description": "Returns the list of bank questions for given ticket type",
+        "tags": [
+          "Bank Questions"
+        ],
+        "parameters": [
+          {
+            "name": "ticketId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ticketId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/organizations/{organizationId}/events": {
+      "get": {
+        "summary": "Returns the list of the Organization's Events",
+        "operationId": "Returns_the_list_of_the_Organization_s_Events",
+        "description": "Returns the list of the Organization's Events",
+        "tags": [
+          "Events"
+        ],
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "organizationId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Creates an Event for an Organization",
+        "operationId": "Creates_an_Event_for_an_Organization",
+        "description": "Creates an Event for an Organization",
+        "tags": [
+          "Events"
+        ],
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "organizationId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          },
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              },
+              "example": {
+                "data": {
+                  "type": "event",
+                  "attributes": {
+                    "analyticsCode": "string",
+                    "attendeesVisibility": "show_all",
+                    "color": "string",
+                    "currency": "string",
+                    "description": "string",
+                    "doorsCloseAfterMinutes": 0,
+                    "doorsOpenBeforeMinutes": 0,
+                    "eventType": "hidden_event",
+                    "gdprText": "string",
+                    "hidePeopleArea": true,
+                    "message": "string",
+                    "name": "string",
+                    "networkType": "everyone",
+                    "password": "pa$$word",
+                    "shortDescription": "string",
+                    "slug": "string",
+                    "suppressEmails": true,
+                    "timeEnd": "2019-08-24T14:15:22Z",
+                    "timeStart": "2019-08-24T14:15:22Z",
+                    "timerLength": 0,
+                    "timezone": "Abu Dhabi"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/events/{eventId}": {
+      "get": {
+        "summary": "Retrieve Event Details",
+        "operationId": "Retrieve_Event_Details",
+        "description": "Retrieve Event Details",
+        "tags": [
+          "Events"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "eventId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/events/{eventId}/duplications": {
+      "post": {
+        "summary": "Duplicates an existing Event",
+        "operationId": "Duplicates_an_existing_Event",
+        "description": "Duplicates an existing Event",
+        "tags": [
+          "Events"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "eventId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          },
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              },
+              "example": {
+                "data": {
+                  "type": "event",
+                  "attributes": {
+                    "name": "string",
+                    "timeStart": "2019-08-24T14:15:22Z",
+                    "timezone": "Abu Dhabi"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/events/{eventId}/registrations": {
+      "get": {
+        "summary": "Retrieve the list of registrations for an Event",
+        "operationId": "Retrieve_the_list_of_registrations_for_an_Event",
+        "description": "Retrieve the list of registrations for an Event",
+        "tags": [
+          "Registrations"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "eventId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a registration for event",
+        "operationId": "Create_a_registration_for_event",
+        "description": "You can only update \\`metadata\\` for Registrations",
+        "tags": [
+          "Registrations"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "eventId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          },
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              },
+              "example": {
+                "data": {
+                  "type": "registration",
+                  "attributes": {
+                    "answers": [
+                      {
+                        "questionId": "string",
+                        "answer": "string"
+                      }
+                    ],
+                    "email": "string",
+                    "externalBarcode": "string",
+                    "firstName": "string",
+                    "lastName": "string",
+                    "metadata": {},
+                    "ticketId": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/registrations/{registrationId}": {
+      "patch": {
+        "summary": "Update registration",
+        "operationId": "Update_registration",
+        "description": "You can only update \\`metadata\\` for Registrations",
+        "tags": [
+          "Registrations"
+        ],
+        "parameters": [
+          {
+            "name": "registrationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "registrationId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          },
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              },
+              "example": {
+                "data": {
+                  "type": "registration",
+                  "attributes": {
+                    "answers": [
+                      {
+                        "questionId": "string",
+                        "answer": "string"
+                      }
+                    ],
+                    "externalBarcode": "string",
+                    "firstName": "string",
+                    "headline": "string",
+                    "lastName": "string",
+                    "ticketId": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Retrieve registration details",
+        "operationId": "Retrieve_registration_details",
+        "description": "Retrieve registration details",
+        "tags": [
+          "Registrations"
+        ],
+        "parameters": [
+          {
+            "name": "registrationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "registrationId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/events/{eventId}/booths": {
+      "get": {
+        "summary": "Retrieve Booths for an Event",
+        "operationId": "Retrieve_Booths_for_an_Event",
+        "description": "Retrieve Booths for an Event",
+        "tags": [
+          "Booths"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "eventId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/events/{eventId}/reports": {
+      "get": {
+        "summary": "Get Reports List for an Event",
+        "operationId": "Get_Reports_List_for_an_Event",
+        "description": "Get Reports List for an Event",
+        "tags": [
+          "Reports"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "eventId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/reports/{reportId}/download": {
+      "get": {
+        "summary": "Download Report",
+        "operationId": "Download_Report",
+        "description": "Download Report",
+        "tags": [
+          "Reports"
+        ],
+        "parameters": [
+          {
+            "name": "reportId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "reportId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/reports/{reportId}": {
+      "get": {
+        "summary": "Get Report Details",
+        "operationId": "Get_Report_Details",
+        "description": "Get Report Details",
+        "tags": [
+          "Reports"
+        ],
+        "parameters": [
+          {
+            "name": "reportId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "reportId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/events/{eventId}/reports/{reportType}": {
+      "post": {
+        "summary": "Create Report for an Event",
+        "operationId": "Create_Report_for_an_Event",
+        "description": "Create Report for an Event",
+        "tags": [
+          "Reports"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "eventId identifier"
+          },
+          {
+            "name": "reportType",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "reportType identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/booths/{boothId}/tags": {
+      "get": {
+        "summary": "Returns the list of tags for a Booth",
+        "operationId": "Returns_the_list_of_tags_for_a_Booth",
+        "description": "Returns the list of tags for a Booth",
+        "tags": [
+          "Booths"
+        ],
+        "parameters": [
+          {
+            "name": "boothId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "boothId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/booths/{scheduleId}/tags": {
+      "get": {
+        "summary": "Returns the list of tags for a ScheduleItem",
+        "operationId": "Returns_the_list_of_tags_for_a_ScheduleItem",
+        "description": "Returns the list of tags for a ScheduleItem",
+        "tags": [
+          "Booths"
+        ],
+        "parameters": [
+          {
+            "name": "scheduleId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "scheduleId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/events/{eventId}/dataSubscriptions": {
+      "post": {
+        "summary": "Create a new data subscription for an Event",
+        "operationId": "Create_a_new_data_subscription_for_an_Event",
+        "description": "Create a new data subscription for an Event",
+        "tags": [
+          "Data Subscriptions"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "eventId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          },
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              },
+              "example": {
+                "data": {
+                  "type": "dataSubscription",
+                  "attributes": {
+                    "configuration": {
+                      "url": "string",
+                      "type": "string",
+                      "expiresAt": "2019-08-24T14:15:22Z"
+                    },
+                    "signals": [
+                      "string"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/events/{eventId}/scheduleItems": {
+      "get": {
+        "summary": "Retrieve the list of schedule items for an Event",
+        "operationId": "Retrieve_the_list_of_schedule_items_for_an_Event",
+        "description": "Retrieve the list of schedule items for an Event",
+        "tags": [
+          "Schedule Items"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "eventId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/events/{eventId}/sessions": {
+      "get": {
+        "summary": "Retrieve the list of sessions for an Event",
+        "operationId": "Retrieve_the_list_of_sessions_for_an_Event",
+        "description": "Retrieve the list of sessions for an Event",
+        "tags": [
+          "Sessions"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "eventId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/events/{eventId}/stages": {
+      "get": {
+        "summary": "Retrieve Stages for an Event",
+        "operationId": "Retrieve_Stages_for_an_Event",
+        "description": "Retrieve Stages for an Event",
+        "tags": [
+          "Stages"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "eventId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/tickets/{ticketId}/magicLinks": {
+      "post": {
+        "summary": "Creates Magic Link for a Ticket type",
+        "operationId": "Creates_Magic_Link_for_a_Ticket_type",
+        "description": "Creates Magic Link for a Ticket type",
+        "tags": [
+          "Magic Links"
+        ],
+        "parameters": [
+          {
+            "name": "ticketId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ticketId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          },
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              },
+              "example": {
+                "data": {
+                  "type": "magicLink",
+                  "attributes": {
+                    "email": "string",
+                    "extraFields": {
+                      "property1": "string",
+                      "property2": "string"
+                    },
+                    "firstName": "string",
+                    "headline": "string",
+                    "lastName": "string",
+                    "metadata": {
+                      "property1": "string",
+                      "property2": "string"
+                    },
+                    "registrationId": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Retrieve Magic Links for a Ticket type",
+        "operationId": "Retrieve_Magic_Links_for_a_Ticket_type",
+        "description": "Retrieve Magic Links for a Ticket type",
+        "tags": [
+          "Magic Links"
+        ],
+        "parameters": [
+          {
+            "name": "ticketId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ticketId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/magicLinks/{magicLinkId}": {
+      "delete": {
+        "summary": "Deletes Magic Link",
+        "operationId": "Deletes_Magic_Link",
+        "description": "Deletes Magic Link",
+        "tags": [
+          "Magic Links"
+        ],
+        "parameters": [
+          {
+            "name": "magicLinkId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "magicLinkId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              },
+              "example": {
+                "data": {
+                  "type": "magicLink",
+                  "attributes": {
+                    "firstName": "API_3",
+                    "lastName": "Test_3",
+                    "email": "neil.azeez+38@hopin.to",
+                    "registrationId": "SFDC-1234",
+                    "extraFields": {
+                      "Age": "30"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Retrieve Magic Link Details",
+        "operationId": "Retrieve_Magic_Link_Details",
+        "description": "Retrieve Magic Link Details",
+        "tags": [
+          "Magic Links"
+        ],
+        "parameters": [
+          {
+            "name": "magicLinkId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "magicLinkId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/events/{eventId}/tickets": {
+      "get": {
+        "summary": "Retrieve Ticket Types for an Event",
+        "operationId": "Retrieve_Ticket_Types_for_an_Event",
+        "description": "Retrieve Ticket Types for an Event",
+        "tags": [
+          "Tickets"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "eventId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/tickets/{ticketId}": {
+      "get": {
+        "summary": "Retrieve Ticket Type Details",
+        "operationId": "Retrieve_Ticket_Type_Details",
+        "description": "Retrieve Ticket Type Details",
+        "tags": [
+          "Tickets"
+        ],
+        "parameters": [
+          {
+            "name": "ticketId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ticketId identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/templates/{templateID}/event": {
+      "post": {
+        "summary": "Creates an event from template",
+        "operationId": "Creates_an_event_from_template",
+        "description": "Creates an event from template",
+        "tags": [
+          "Templates"
+        ],
+        "parameters": [
+          {
+            "name": "templateID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "templateID identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          },
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              },
+              "example": {
+                "data": {
+                  "type": "event",
+                  "attributes": {
+                    "auto_publish": true,
+                    "metadata": {},
+                    "name": "string",
+                    "organizationId": "string",
+                    "password": "string",
+                    "timeEnd": "2019-08-24T14:15:22Z",
+                    "timeStart": "2019-08-24T14:15:22Z",
+                    "timezone": "Abu Dhabi",
+                    "type": "hidden_event"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/organizations/{organizationId}/templates": {
+      "get": {
+        "summary": "Returns the list of the organization's templates",
+        "operationId": "Returns_the_list_of_the_organization_s_templates",
+        "description": "Returns the list of the organization's templates",
+        "tags": [
+          "Organizations"
+        ],
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Organization identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
