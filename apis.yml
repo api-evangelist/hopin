@@ -6,7 +6,7 @@ description: >-
   Acquired by RingCentral from Hopin in August 2023, the platform enables
   planning and producing engaging virtual, hybrid, and in-person event
   experiences. API access is available on the Enterprise plan.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Events
   - Virtual Events
@@ -29,7 +29,7 @@ apis:
       subscriptions. Authentication uses OAuth 2.0 with client credentials.
       API access is restricted to the Enterprise plan. The base URL is
       https://api.events.ringcentral.com.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.events.ringcentral.com/external-api
     baseURL: https://api.events.ringcentral.com
     tags:
