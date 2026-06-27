@@ -2,6 +2,13 @@
   "repo": "hopin",
   "feeds": [
     {
+      "source": "https://www.ringcentral.com/us/en/blog/feed/",
+      "feed_url": "https://www.ringcentral.com/us/en/blog/feed/",
+      "title": "",
+      "saved": 4,
+      "method": "feed"
+    },
+    {
       "source": "https://www.ringcentral.com/pricing/events.html",
       "feed_url": "https://www.ringcentral.com/pricing/events.html",
       "title": "",
@@ -9,6 +16,6 @@
       "method": "none"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 5,
+  "fetched": "2026-06-27T12:03:07Z"
 }

@@ -54,7 +54,7 @@ apis:
         url: https://github.com/hopin-team/hopin-external-api-collection
       - type: OAuthSample
         url: https://github.com/hopin-team/rce-external-api-oauth-sample
-      - type: Changelog
+      - type: ChangeLog
         url: https://developer.events.ringcentral.com/external-api/changelog
       - type: ReleaseNotes
         url: https://support.ringcentral.com/release-notes/ringex/video/events.html
@@ -83,7 +83,7 @@ common:
     url: https://github.com/hopin-team/hopin-external-api-collection
   - type: Authentication
     url: https://developer.events.ringcentral.com/external-api/guides/authentication
-  - type: Changelog
+  - type: ChangeLog
     url: https://developer.events.ringcentral.com/external-api/changelog
   - type: Status
     url: https://status.ringcentral.com/
