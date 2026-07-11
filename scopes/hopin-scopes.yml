@@ -1,0 +1,23 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openapi.json
+schemes:
+- name: oauth2
+  source: openapi/openapi.json
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.events.ringcentral.com/v1/auth/token
+  description: OAuth 2.0 Client Credentials flow
+scopes:
+- scope: read
+  description: Read access to resources
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/openapi.json
+- scope: write
+  description: Write access to resources
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/openapi.json

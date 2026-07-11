@@ -73,6 +73,8 @@ apis:
         url: https://developer.events.ringcentral.com/
         email: ''
 common:
+  - type: OAuthScopes
+    url: scopes/hopin-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/hopin-team
   - type: Documentation
