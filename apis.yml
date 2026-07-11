@@ -73,6 +73,12 @@ apis:
         url: https://developer.events.ringcentral.com/
         email: ''
 common:
+  - type: TrustCenter
+    url: security/hopin-trust-center.yml
+  - type: DomainSecurity
+    url: security/hopin-domain-security.yml
+  - type: Authentication
+    url: authentication/hopin-authentication.yml
   - type: OAuthScopes
     url: scopes/hopin-scopes.yml
   - type: GitHubOrganization

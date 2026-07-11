@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openapi.json
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - clientCredentials
+schemes:
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.events.ringcentral.com/v1/auth/token
+    scopes: 2
+  description: OAuth 2.0 Client Credentials flow
+  sources:
+  - openapi/openapi.json
