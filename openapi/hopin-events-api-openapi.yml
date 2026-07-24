@@ -1,0 +1,207 @@
+openapi: 3.0.3
+info:
+  title: RingCentral Bank Questions Events API
+  description: The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.
+  version: 1.0.0
+  contact:
+    name: RingCentral Events Developer Support
+    url: https://developer.events.ringcentral.com/
+  license:
+    name: Proprietary
+  termsOfService: https://developer.events.ringcentral.com/external-api
+servers:
+- url: https://api.events.ringcentral.com
+  description: RingCentral Events Production API
+tags:
+- name: Events
+  description: Event management
+paths:
+  /v1/organizations/{organizationId}/events:
+    get:
+      summary: Returns the list of the Organization's Events
+      operationId: Returns_the_list_of_the_Organization_s_Events
+      description: Returns the list of the Organization's Events
+      tags:
+      - Events
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: organizationId identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+      security:
+      - oauth2:
+        - read
+    post:
+      summary: Creates an Event for an Organization
+      operationId: Creates_an_Event_for_an_Organization
+      description: Creates an Event for an Organization
+      tags:
+      - Events
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: organizationId identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+        '201':
+          description: Created
+      security:
+      - oauth2:
+        - read
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              data:
+                type: event
+                attributes:
+                  analyticsCode: string
+                  attendeesVisibility: show_all
+                  color: string
+                  currency: string
+                  description: string
+                  doorsCloseAfterMinutes: 0
+                  doorsOpenBeforeMinutes: 0
+                  eventType: hidden_event
+                  gdprText: string
+                  hidePeopleArea: true
+                  message: string
+                  name: string
+                  networkType: everyone
+                  password: pa$$word
+                  shortDescription: string
+                  slug: string
+                  suppressEmails: true
+                  timeEnd: '2019-08-24T14:15:22Z'
+                  timeStart: '2019-08-24T14:15:22Z'
+                  timerLength: 0
+                  timezone: Abu Dhabi
+  /v1/events/{eventId}:
+    get:
+      summary: Retrieve Event Details
+      operationId: Retrieve_Event_Details
+      description: Retrieve Event Details
+      tags:
+      - Events
+      parameters:
+      - name: eventId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: eventId identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+      security:
+      - oauth2:
+        - read
+  /v1/events/{eventId}/duplications:
+    post:
+      summary: Duplicates an existing Event
+      operationId: Duplicates_an_existing_Event
+      description: Duplicates an existing Event
+      tags:
+      - Events
+      parameters:
+      - name: eventId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: eventId identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+        '201':
+          description: Created
+      security:
+      - oauth2:
+        - read
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              data:
+                type: event
+                attributes:
+                  name: string
+                  timeStart: '2019-08-24T14:15:22Z'
+                  timezone: Abu Dhabi
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 Client Credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.events.ringcentral.com/v1/auth/token
+          scopes:
+            read: Read access to resources
+            write: Write access to resources
+externalDocs:
+  description: RingCentral Events API Documentation
+  url: https://developer.events.ringcentral.com/external-api

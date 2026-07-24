@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: RingCentral Events Bank Questions Templates API
+  description: The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.
+  version: 1.0.0
+  contact:
+    name: RingCentral Events Developer Support
+    url: https://developer.events.ringcentral.com/
+  license:
+    name: Proprietary
+  termsOfService: https://developer.events.ringcentral.com/external-api
+servers:
+- url: https://api.events.ringcentral.com
+  description: RingCentral Events Production API
+tags:
+- name: Templates
+  description: Event template management
+paths:
+  /v1/templates/{templateID}/event:
+    post:
+      summary: Creates an event from template
+      operationId: Creates_an_event_from_template
+      description: Creates an event from template
+      tags:
+      - Templates
+      parameters:
+      - name: templateID
+        in: path
+        required: true
+        schema:
+          type: string
+        description: templateID identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+        '201':
+          description: Created
+      security:
+      - oauth2:
+        - read
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              data:
+                type: event
+                attributes:
+                  auto_publish: true
+                  metadata: {}
+                  name: string
+                  organizationId: string
+                  password: string
+                  timeEnd: '2019-08-24T14:15:22Z'
+                  timeStart: '2019-08-24T14:15:22Z'
+                  timezone: Abu Dhabi
+                  type: hidden_event
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 Client Credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.events.ringcentral.com/v1/auth/token
+          scopes:
+            read: Read access to resources
+            write: Write access to resources
+externalDocs:
+  description: RingCentral Events API Documentation
+  url: https://developer.events.ringcentral.com/external-api

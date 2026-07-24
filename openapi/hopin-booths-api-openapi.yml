@@ -1,0 +1,128 @@
+openapi: 3.0.3
+info:
+  title: RingCentral Events Bank Questions Booths API
+  description: The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.
+  version: 1.0.0
+  contact:
+    name: RingCentral Events Developer Support
+    url: https://developer.events.ringcentral.com/
+  license:
+    name: Proprietary
+  termsOfService: https://developer.events.ringcentral.com/external-api
+servers:
+- url: https://api.events.ringcentral.com
+  description: RingCentral Events Production API
+tags:
+- name: Booths
+  description: Booth management
+paths:
+  /v1/events/{eventId}/booths:
+    get:
+      summary: Retrieve Booths for an Event
+      operationId: Retrieve_Booths_for_an_Event
+      description: Retrieve Booths for an Event
+      tags:
+      - Booths
+      parameters:
+      - name: eventId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: eventId identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+      security:
+      - oauth2:
+        - read
+  /v1/booths/{boothId}/tags:
+    get:
+      summary: Returns the list of tags for a Booth
+      operationId: Returns_the_list_of_tags_for_a_Booth
+      description: Returns the list of tags for a Booth
+      tags:
+      - Booths
+      parameters:
+      - name: boothId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: boothId identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+      security:
+      - oauth2:
+        - read
+  /v1/booths/{scheduleId}/tags:
+    get:
+      summary: Returns the list of tags for a ScheduleItem
+      operationId: Returns_the_list_of_tags_for_a_ScheduleItem
+      description: Returns the list of tags for a ScheduleItem
+      tags:
+      - Booths
+      parameters:
+      - name: scheduleId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: scheduleId identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+      security:
+      - oauth2:
+        - read
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 Client Credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.events.ringcentral.com/v1/auth/token
+          scopes:
+            read: Read access to resources
+            write: Write access to resources
+externalDocs:
+  description: RingCentral Events API Documentation
+  url: https://developer.events.ringcentral.com/external-api

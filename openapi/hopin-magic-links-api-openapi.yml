@@ -1,0 +1,197 @@
+openapi: 3.0.3
+info:
+  title: RingCentral Events Bank Questions Magic Links API
+  description: The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.
+  version: 1.0.0
+  contact:
+    name: RingCentral Events Developer Support
+    url: https://developer.events.ringcentral.com/
+  license:
+    name: Proprietary
+  termsOfService: https://developer.events.ringcentral.com/external-api
+servers:
+- url: https://api.events.ringcentral.com
+  description: RingCentral Events Production API
+tags:
+- name: Magic Links
+  description: Magic link management
+paths:
+  /v1/tickets/{ticketId}/magicLinks:
+    post:
+      summary: Creates Magic Link for a Ticket type
+      operationId: Creates_Magic_Link_for_a_Ticket_type
+      description: Creates Magic Link for a Ticket type
+      tags:
+      - Magic Links
+      parameters:
+      - name: ticketId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: ticketId identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+        '201':
+          description: Created
+      security:
+      - oauth2:
+        - read
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              data:
+                type: magicLink
+                attributes:
+                  email: string
+                  extraFields:
+                    property1: string
+                    property2: string
+                  firstName: string
+                  headline: string
+                  lastName: string
+                  metadata:
+                    property1: string
+                    property2: string
+                  registrationId: string
+    get:
+      summary: Retrieve Magic Links for a Ticket type
+      operationId: Retrieve_Magic_Links_for_a_Ticket_type
+      description: Retrieve Magic Links for a Ticket type
+      tags:
+      - Magic Links
+      parameters:
+      - name: ticketId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: ticketId identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+      security:
+      - oauth2:
+        - read
+  /v1/magicLinks/{magicLinkId}:
+    delete:
+      summary: Deletes Magic Link
+      operationId: Deletes_Magic_Link
+      description: Deletes Magic Link
+      tags:
+      - Magic Links
+      parameters:
+      - name: magicLinkId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: magicLinkId identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+      security:
+      - oauth2:
+        - read
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              data:
+                type: magicLink
+                attributes:
+                  firstName: API_3
+                  lastName: Test_3
+                  email: neil.azeez+38@hopin.to
+                  registrationId: SFDC-1234
+                  extraFields:
+                    Age: '30'
+    get:
+      summary: Retrieve Magic Link Details
+      operationId: Retrieve_Magic_Link_Details
+      description: Retrieve Magic Link Details
+      tags:
+      - Magic Links
+      parameters:
+      - name: magicLinkId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: magicLinkId identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+      security:
+      - oauth2:
+        - read
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 Client Credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.events.ringcentral.com/v1/auth/token
+          scopes:
+            read: Read access to resources
+            write: Write access to resources
+externalDocs:
+  description: RingCentral Events API Documentation
+  url: https://developer.events.ringcentral.com/external-api

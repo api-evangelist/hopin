@@ -1,0 +1,122 @@
+openapi: 3.0.3
+info:
+  title: RingCentral Events Bank Questions Organizations API
+  description: The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.
+  version: 1.0.0
+  contact:
+    name: RingCentral Events Developer Support
+    url: https://developer.events.ringcentral.com/
+  license:
+    name: Proprietary
+  termsOfService: https://developer.events.ringcentral.com/external-api
+servers:
+- url: https://api.events.ringcentral.com
+  description: RingCentral Events Production API
+tags:
+- name: Organizations
+  description: Organization management
+paths:
+  /v1/organizations:
+    get:
+      summary: Retrieve the list of Organizations property of the user
+      operationId: Retrieve_the_list_of_Organizations_property_of_the_user
+      description: Retrieve the list of Organizations property of the user
+      tags:
+      - Organizations
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+      security:
+      - oauth2:
+        - read
+  /v1/organizations/{organizationId}:
+    get:
+      summary: Retrieve the details of the Organization
+      operationId: Retrieve_the_details_of_the_Organization
+      description: Retrieve the details of the Organization
+      tags:
+      - Organizations
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: organizationId identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+      security:
+      - oauth2:
+        - read
+  /v1/organizations/{organizationId}/templates:
+    get:
+      summary: Returns the list of the organization's templates
+      operationId: Returns_the_list_of_the_organization_s_templates
+      description: Returns the list of the organization's templates
+      tags:
+      - Organizations
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Organization identifier
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '429':
+          description: Too Many Requests
+      security:
+      - oauth2:
+        - read
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 Client Credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.events.ringcentral.com/v1/auth/token
+          scopes:
+            read: Read access to resources
+            write: Write access to resources
+externalDocs:
+  description: RingCentral Events API Documentation
+  url: https://developer.events.ringcentral.com/external-api
