@@ -6,7 +6,20 @@ description: >-
   Acquired by RingCentral from Hopin in August 2023, the platform enables
   planning and producing engaging virtual, hybrid, and in-person event
   experiences. API access is available on the Enterprise plan.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: true
+  try_now: true
+  public: false
+  label: Freemium (free trial) · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hopin.png
 tags:
   - Events
   - Virtual Events
@@ -21,57 +34,482 @@ created: '2024-01-01'
 modified: '2026-06-13'
 specificationVersion: '0.19'
 apis:
-  - name: RingCentral Events API
-    description: >-
-      The RingCentral Events External API provides programmatic access to
-      manage organizations, events, sessions, stages, booths, registrations,
-      tickets, magic links, reports, schedule items, tags, and data
-      subscriptions. Authentication uses OAuth 2.0 with client credentials.
-      API access is restricted to the Enterprise plan. The base URL is
-      https://api.events.ringcentral.com.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://developer.events.ringcentral.com/external-api
-    baseURL: https://api.events.ringcentral.com
-    tags:
-      - Events
-      - Organizations
-      - Sessions
-      - Registrations
-      - Booths
-      - Tickets
-      - Reports
-      - Webhooks
-    properties:
-      - type: OpenAPI
-        url: openapi/openapi.json
-      - type: JSONSchema
-        url: json-schema/ringcentral-events-schema.json
-      - type: JSONLDContext
-        url: json-ld/ringcentral-events-context.jsonld
-      - type: Documentation
-        url: https://developer.events.ringcentral.com/external-api
-      - type: PostmanCollection
-        url: https://github.com/hopin-team/hopin-external-api-collection
-      - type: OAuthSample
-        url: https://github.com/hopin-team/rce-external-api-oauth-sample
-      - type: ChangeLog
-        url: https://developer.events.ringcentral.com/external-api/changelog
-      - type: ReleaseNotes
-        url: https://support.ringcentral.com/release-notes/ringex/video/events.html
-      - type: Status
-        url: https://status.ringcentral.com/
-      - type: Pricing
-        url: https://www.ringcentral.com/pricing/events.html
-      - type: Plans
-        url: plans/plans.yml
-      - type: RateLimits
-        url: rate-limits/rate-limits.yml
-      - type: FinOps
-        url: finops/finops.yml
-    contact:
-      - FN: RingCentral Events Developer Support
-        url: https://developer.events.ringcentral.com/
-        email: ''
+- aid: hopin:hopin-bank-questions-api
+  name: RingCentral Events Bank Questions API
+  description: Bank question management
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Bank Questions
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-bank-questions-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-booths-api
+  name: RingCentral Events Booths API
+  description: Booth management
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Booths
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-booths-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-data-subscriptions-api
+  name: RingCentral Events Data Subscriptions API
+  description: Data subscription webhooks
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Data Subscriptions
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-data-subscriptions-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-events-api
+  name: RingCentral Events Events API
+  description: Event management
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-events-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-health-api
+  name: RingCentral Events Health API
+  description: Health check endpoints
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Health
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-health-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-magic-links-api
+  name: RingCentral Events Magic Links API
+  description: Magic link management
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Magic Links
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-magic-links-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-organizations-api
+  name: RingCentral Events Organizations API
+  description: Organization management
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Organizations
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-organizations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-registrations-api
+  name: RingCentral Events Registrations API
+  description: Event registration management
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Registrations
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-registrations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-reports-api
+  name: RingCentral Events Reports API
+  description: Event reporting
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-reports-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-schedule-items-api
+  name: RingCentral Events Schedule Items API
+  description: Event schedule management
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Schedule Items
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-schedule-items-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-sessions-api
+  name: RingCentral Events Sessions API
+  description: Event session management
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-sessions-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-stages-api
+  name: RingCentral Events Stages API
+  description: Event stage management
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Stages
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-stages-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-templates-api
+  name: RingCentral Events Templates API
+  description: Event template management
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Templates
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-templates-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
+- aid: hopin:hopin-tickets-api
+  name: RingCentral Events Tickets API
+  description: Ticket management
+  humanURL: https://developer.events.ringcentral.com/external-api
+  baseURL: https://api.events.ringcentral.com
+  tags:
+  - Tickets
+  properties:
+  - type: OpenAPI
+    url: openapi/hopin-tickets-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ringcentral-events-schema.json
+  - type: JSONLDContext
+    url: json-ld/ringcentral-events-context.jsonld
+  - type: Documentation
+    url: https://developer.events.ringcentral.com/external-api
+  - type: PostmanCollection
+    url: https://github.com/hopin-team/hopin-external-api-collection
+  - type: OAuthSample
+    url: https://github.com/hopin-team/rce-external-api-oauth-sample
+  - type: ChangeLog
+    url: https://developer.events.ringcentral.com/external-api/changelog
+  - type: ReleaseNotes
+    url: https://support.ringcentral.com/release-notes/ringex/video/events.html
+  - type: Status
+    url: https://status.ringcentral.com/
+  - type: Pricing
+    url: https://www.ringcentral.com/pricing/events.html
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
 common:
   - type: AgenticAccess
     url: agentic-access/hopin-agentic-access.yml
