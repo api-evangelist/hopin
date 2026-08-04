@@ -1,0 +1,40 @@
+{
+  "provider": "hopin",
+  "sources": [
+    "hopin-bank-questions-api-openapi.yml",
+    "hopin-booths-api-openapi.yml",
+    "hopin-data-subscriptions-api-openapi.yml",
+    "hopin-events-api-openapi.yml",
+    "hopin-health-api-openapi.yml",
+    "hopin-magic-links-api-openapi.yml",
+    "hopin-organizations-api-openapi.yml",
+    "hopin-registrations-api-openapi.yml",
+    "hopin-reports-api-openapi.yml",
+    "hopin-schedule-items-api-openapi.yml",
+    "hopin-sessions-api-openapi.yml",
+    "hopin-stages-api-openapi.yml",
+    "hopin-templates-api-openapi.yml",
+    "hopin-tickets-api-openapi.yml"
+  ],
+  "outputs": [
+    "hopin-bank-questions-api-openapi.yml",
+    "hopin-booths-api-openapi.yml",
+    "hopin-data-subscriptions-api-openapi.yml",
+    "hopin-events-api-openapi.yml",
+    "hopin-health-api-openapi.yml",
+    "hopin-magic-links-api-openapi.yml",
+    "hopin-organizations-api-openapi.yml",
+    "hopin-registrations-api-openapi.yml",
+    "hopin-reports-api-openapi.yml",
+    "hopin-schedule-items-api-openapi.yml",
+    "hopin-sessions-api-openapi.yml",
+    "hopin-stages-api-openapi.yml",
+    "hopin-templates-api-openapi.yml",
+    "hopin-tickets-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
