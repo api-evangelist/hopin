@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RingCentral Events Bank Questions Templates API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Creates an event from template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.events.ringcentral.com/v1/templates/:templateID/event",
+            "params": [
+              {
+                "name": "templateID",
+                "value": "",
+                "type": "path",
+                "description": "templateID identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.events.ringcentral.com/v1/auth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates an event from template"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

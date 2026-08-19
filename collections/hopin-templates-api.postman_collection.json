@@ -1,0 +1,459 @@
+{
+  "item": [
+    {
+      "id": "359f3863-ccc2-4596-bda4-03b02c1400a5",
+      "name": "Templates",
+      "description": {
+        "content": "Event template management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "504b83e3-140a-41f0-84d0-7ebf09420246",
+          "name": "Creates an event from template",
+          "request": {
+            "name": "Creates an event from template",
+            "description": {
+              "content": "Creates an event from template",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "templates",
+                ":templateID",
+                "event"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "templateID",
+                  "description": "(Required) templateID identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "read write"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.events.ringcentral.com/v1/auth/token"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3b419b38-6a62-4da6-bc3d-d856fa3761f5",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "templates",
+                    ":templateID",
+                    "event"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateID",
+                      "description": "(Required) templateID identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"type\": \"event\",\n    \"attributes\": {\n      \"auto_publish\": true,\n      \"metadata\": {},\n      \"name\": \"string\",\n      \"organizationId\": \"string\",\n      \"password\": \"string\",\n      \"timeEnd\": \"2019-08-24T14:15:22Z\",\n      \"timeStart\": \"2019-08-24T14:15:22Z\",\n      \"timezone\": \"Abu Dhabi\",\n      \"type\": \"hidden_event\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aee1c161-e328-47ce-9419-15903ddf212c",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "templates",
+                    ":templateID",
+                    "event"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateID",
+                      "description": "(Required) templateID identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"type\": \"event\",\n    \"attributes\": {\n      \"auto_publish\": true,\n      \"metadata\": {},\n      \"name\": \"string\",\n      \"organizationId\": \"string\",\n      \"password\": \"string\",\n      \"timeEnd\": \"2019-08-24T14:15:22Z\",\n      \"timeStart\": \"2019-08-24T14:15:22Z\",\n      \"timezone\": \"Abu Dhabi\",\n      \"type\": \"hidden_event\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4a034ec0-5e02-4bc9-a301-79105c6e4e68",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "templates",
+                    ":templateID",
+                    "event"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateID",
+                      "description": "(Required) templateID identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"type\": \"event\",\n    \"attributes\": {\n      \"auto_publish\": true,\n      \"metadata\": {},\n      \"name\": \"string\",\n      \"organizationId\": \"string\",\n      \"password\": \"string\",\n      \"timeEnd\": \"2019-08-24T14:15:22Z\",\n      \"timeStart\": \"2019-08-24T14:15:22Z\",\n      \"timezone\": \"Abu Dhabi\",\n      \"type\": \"hidden_event\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d6be01d3-72fb-4a17-9d55-874fc4d35187",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "templates",
+                    ":templateID",
+                    "event"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateID",
+                      "description": "(Required) templateID identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"type\": \"event\",\n    \"attributes\": {\n      \"auto_publish\": true,\n      \"metadata\": {},\n      \"name\": \"string\",\n      \"organizationId\": \"string\",\n      \"password\": \"string\",\n      \"timeEnd\": \"2019-08-24T14:15:22Z\",\n      \"timeStart\": \"2019-08-24T14:15:22Z\",\n      \"timezone\": \"Abu Dhabi\",\n      \"type\": \"hidden_event\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0497e4fb-6578-4fad-bf26-7f290513a0d6",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "templates",
+                    ":templateID",
+                    "event"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateID",
+                      "description": "(Required) templateID identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"type\": \"event\",\n    \"attributes\": {\n      \"auto_publish\": true,\n      \"metadata\": {},\n      \"name\": \"string\",\n      \"organizationId\": \"string\",\n      \"password\": \"string\",\n      \"timeEnd\": \"2019-08-24T14:15:22Z\",\n      \"timeStart\": \"2019-08-24T14:15:22Z\",\n      \"timezone\": \"Abu Dhabi\",\n      \"type\": \"hidden_event\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4c4f8ee6-fec8-4063-b0dc-06d26a5b3bff",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "templates",
+                    ":templateID",
+                    "event"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateID",
+                      "description": "(Required) templateID identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"type\": \"event\",\n    \"attributes\": {\n      \"auto_publish\": true,\n      \"metadata\": {},\n      \"name\": \"string\",\n      \"organizationId\": \"string\",\n      \"password\": \"string\",\n      \"timeEnd\": \"2019-08-24T14:15:22Z\",\n      \"timeStart\": \"2019-08-24T14:15:22Z\",\n      \"timezone\": \"Abu Dhabi\",\n      \"type\": \"hidden_event\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.events.ringcentral.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3978826d-278c-4a99-979b-4af21f6a7222",
+    "name": "RingCentral Events Bank Questions Templates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.\n\nContact Support:\n Name: RingCentral Events Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

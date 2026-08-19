@@ -1,0 +1,138 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RingCentral Events Bank Questions Magic Links API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Magic Links",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Magic Links for a Ticket type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.events.ringcentral.com/v1/tickets/:ticketId/magicLinks",
+            "params": [
+              {
+                "name": "ticketId",
+                "value": "",
+                "type": "path",
+                "description": "ticketId identifier"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.events.ringcentral.com/v1/auth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Retrieve Magic Links for a Ticket type"
+        },
+        {
+          "info": {
+            "name": "Creates Magic Link for a Ticket type",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.events.ringcentral.com/v1/tickets/:ticketId/magicLinks",
+            "params": [
+              {
+                "name": "ticketId",
+                "value": "",
+                "type": "path",
+                "description": "ticketId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.events.ringcentral.com/v1/auth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates Magic Link for a Ticket type"
+        },
+        {
+          "info": {
+            "name": "Retrieve Magic Link Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.events.ringcentral.com/v1/magicLinks/:magicLinkId",
+            "params": [
+              {
+                "name": "magicLinkId",
+                "value": "",
+                "type": "path",
+                "description": "magicLinkId identifier"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.events.ringcentral.com/v1/auth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Retrieve Magic Link Details"
+        },
+        {
+          "info": {
+            "name": "Deletes Magic Link",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.events.ringcentral.com/v1/magicLinks/:magicLinkId",
+            "params": [
+              {
+                "name": "magicLinkId",
+                "value": "",
+                "type": "path",
+                "description": "magicLinkId identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "client_credentials",
+              "accessTokenUrl": "https://api.events.ringcentral.com/v1/auth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Deletes Magic Link"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
