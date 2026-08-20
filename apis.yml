@@ -21,6 +21,15 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hopin.png
 tags:
+  - Event
+  - Virtual Events
+  - Hybrid Events
+  - Webinars
+  - Event Management
+  - Registration
+  - Sessions
+  - Networking
+tags_raw:
   - Events
   - Virtual Events
   - Hybrid Events
@@ -142,6 +151,8 @@ apis:
   humanURL: https://developer.events.ringcentral.com/external-api
   baseURL: https://api.events.ringcentral.com
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
@@ -244,6 +255,8 @@ apis:
   humanURL: https://developer.events.ringcentral.com/external-api
   baseURL: https://api.events.ringcentral.com
   tags:
+  - Organization
+  tags_raw:
   - Organizations
   properties:
   - type: OpenAPI
