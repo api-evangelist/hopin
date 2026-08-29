@@ -6,6 +6,18 @@ description: >-
   Acquired by RingCentral from Hopin in August 2023, the platform enables
   planning and producing engaging virtual, hybrid, and in-person event
   experiences. API access is available on the Enterprise plan.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
