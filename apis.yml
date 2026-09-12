@@ -536,6 +536,8 @@ apis:
   - type: FinOps
     url: finops/finops.yml
 common:
+  - type: Website
+    url: https://www.ringcentral.com/
   - type: AgenticAccess
     url: agentic-access/hopin-agentic-access.yml
   - type: TrustCenter
