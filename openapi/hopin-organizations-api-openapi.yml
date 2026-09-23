@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: RingCentral Events Bank Questions Organizations API
+  title: RingCentral Events Organizations API
   description: The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.
   version: 1.0.0
   contact:
@@ -20,7 +20,6 @@ paths:
     get:
       summary: Retrieve the list of Organizations property of the user
       operationId: Retrieve_the_list_of_Organizations_property_of_the_user
-      description: Retrieve the list of Organizations property of the user
       tags:
       - Organizations
       parameters: []
@@ -46,7 +45,6 @@ paths:
     get:
       summary: Retrieve the details of the Organization
       operationId: Retrieve_the_details_of_the_Organization
-      description: Retrieve the details of the Organization
       tags:
       - Organizations
       parameters:
@@ -78,7 +76,6 @@ paths:
     get:
       summary: Returns the list of the organization's templates
       operationId: Returns_the_list_of_the_organization_s_templates
-      description: Returns the list of the organization's templates
       tags:
       - Organizations
       parameters:

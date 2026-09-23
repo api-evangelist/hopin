@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: RingCentral Events Bank Questions API
   description: The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.
@@ -20,7 +20,6 @@ paths:
     get:
       summary: Returns the list of bank questions for given ticket type
       operationId: Returns_the_list_of_bank_questions_for_given_ticket_type
-      description: Returns the list of bank questions for given ticket type
       tags:
       - Bank Questions
       parameters:

@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: RingCentral Events Bank Questions Booths API
+  title: RingCentral Events Booths API
   description: The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.
   version: 1.0.0
   contact:
@@ -20,7 +20,6 @@ paths:
     get:
       summary: Retrieve Booths for an Event
       operationId: Retrieve_Booths_for_an_Event
-      description: Retrieve Booths for an Event
       tags:
       - Booths
       parameters:
@@ -52,7 +51,6 @@ paths:
     get:
       summary: Returns the list of tags for a Booth
       operationId: Returns_the_list_of_tags_for_a_Booth
-      description: Returns the list of tags for a Booth
       tags:
       - Booths
       parameters:
@@ -84,7 +82,6 @@ paths:
     get:
       summary: Returns the list of tags for a ScheduleItem
       operationId: Returns_the_list_of_tags_for_a_ScheduleItem
-      description: Returns the list of tags for a ScheduleItem
       tags:
       - Booths
       parameters:

@@ -1,20 +1,7 @@
 {
   "provider": "hopin",
   "sources": [
-    "hopin-bank-questions-api-openapi.yml",
-    "hopin-booths-api-openapi.yml",
-    "hopin-data-subscriptions-api-openapi.yml",
-    "hopin-events-api-openapi.yml",
-    "hopin-health-api-openapi.yml",
-    "hopin-magic-links-api-openapi.yml",
-    "hopin-organizations-api-openapi.yml",
-    "hopin-registrations-api-openapi.yml",
-    "hopin-reports-api-openapi.yml",
-    "hopin-schedule-items-api-openapi.yml",
-    "hopin-sessions-api-openapi.yml",
-    "hopin-stages-api-openapi.yml",
-    "hopin-templates-api-openapi.yml",
-    "hopin-tickets-api-openapi.yml"
+    "_original/openapi.json"
   ],
   "outputs": [
     "hopin-bank-questions-api-openapi.yml",
@@ -35,6 +22,25 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.json: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "hopin-bank-questions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-booths-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-data-subscriptions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-health-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-magic-links-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-organizations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-registrations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-reports-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-schedule-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-sessions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-stages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hopin-tickets-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

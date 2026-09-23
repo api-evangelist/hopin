@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: RingCentral Events Bank Questions Stages API
+  title: RingCentral Events Stages API
   description: The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.
   version: 1.0.0
   contact:
@@ -20,7 +20,6 @@ paths:
     get:
       summary: Retrieve Stages for an Event
       operationId: Retrieve_Stages_for_an_Event
-      description: Retrieve Stages for an Event
       tags:
       - Stages
       parameters:

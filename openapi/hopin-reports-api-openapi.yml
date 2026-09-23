@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: RingCentral Events Bank Questions Reports API
+  title: RingCentral Events Reports API
   description: The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.
   version: 1.0.0
   contact:
@@ -20,7 +20,6 @@ paths:
     get:
       summary: Get Reports List for an Event
       operationId: Get_Reports_List_for_an_Event
-      description: Get Reports List for an Event
       tags:
       - Reports
       parameters:
@@ -52,7 +51,6 @@ paths:
     get:
       summary: Download Report
       operationId: Download_Report
-      description: Download Report
       tags:
       - Reports
       parameters:
@@ -84,7 +82,6 @@ paths:
     get:
       summary: Get Report Details
       operationId: Get_Report_Details
-      description: Get Report Details
       tags:
       - Reports
       parameters:
@@ -116,7 +113,6 @@ paths:
     post:
       summary: Create Report for an Event
       operationId: Create_Report_for_an_Event
-      description: Create Report for an Event
       tags:
       - Reports
       parameters:

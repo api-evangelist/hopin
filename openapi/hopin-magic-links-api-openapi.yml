@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: RingCentral Events Bank Questions Magic Links API
+  title: RingCentral Events Magic Links API
   description: The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.
   version: 1.0.0
   contact:
@@ -20,7 +20,6 @@ paths:
     post:
       summary: Creates Magic Link for a Ticket type
       operationId: Creates_Magic_Link_for_a_Ticket_type
-      description: Creates Magic Link for a Ticket type
       tags:
       - Magic Links
       parameters:
@@ -74,7 +73,6 @@ paths:
     get:
       summary: Retrieve Magic Links for a Ticket type
       operationId: Retrieve_Magic_Links_for_a_Ticket_type
-      description: Retrieve Magic Links for a Ticket type
       tags:
       - Magic Links
       parameters:
@@ -106,7 +104,6 @@ paths:
     delete:
       summary: Deletes Magic Link
       operationId: Deletes_Magic_Link
-      description: Deletes Magic Link
       tags:
       - Magic Links
       parameters:
@@ -153,7 +150,6 @@ paths:
     get:
       summary: Retrieve Magic Link Details
       operationId: Retrieve_Magic_Link_Details
-      description: Retrieve Magic Link Details
       tags:
       - Magic Links
       parameters:

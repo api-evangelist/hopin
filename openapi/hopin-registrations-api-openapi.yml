@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: RingCentral Events Bank Questions Registrations API
+  title: RingCentral Events Registrations API
   description: The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan.
   version: 1.0.0
   contact:
@@ -20,7 +20,6 @@ paths:
     get:
       summary: Retrieve the list of registrations for an Event
       operationId: Retrieve_the_list_of_registrations_for_an_Event
-      description: Retrieve the list of registrations for an Event
       tags:
       - Registrations
       parameters:
@@ -155,7 +154,6 @@ paths:
     get:
       summary: Retrieve registration details
       operationId: Retrieve_registration_details
-      description: Retrieve registration details
       tags:
       - Registrations
       parameters:
