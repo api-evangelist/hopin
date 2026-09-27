@@ -505,6 +505,8 @@ apis:
   humanURL: https://developer.events.ringcentral.com/external-api
   baseURL: https://api.events.ringcentral.com
   tags:
+  - Ticketing
+  tags_raw:
   - Tickets
   properties:
   - type: OpenAPI
