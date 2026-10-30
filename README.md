@@ -1,4 +1,4 @@
-# RingCentral Events (hopin)
+# RingCentral Events
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,76 +66,178 @@
 
 RingCentral Events (formerly Hopin) is a virtual and hybrid event management platform with REST APIs for managing organizations, events, sessions, stages, booths, registrations, attendees, tickets, reports, and data subscriptions. Acquired by RingCentral from Hopin in August 2023, the platform enables planning and producing engaging virtual, hybrid, and in-person event experiences. API access is available on the Enterprise plan.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/hopin/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/hopin/refs/heads/main/apis.yml)
+**Areas:** Event · Virtual Events · Hybrid Events · Webinars · Event Management · Registration · Sessions · Networking
 
-## Tags
+## RingCentral Events on APIs.io
 
-- Events
-- Virtual Events
-- Hybrid Events
-- Webinars
-- Event Management
-- Registration
-- Sessions
-- Networking
+Everything profiled for RingCentral Events is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/hopin/](https://apis.io/providers/hopin/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (14)
 
-- **Created:** 2024-01-01
-- **Modified:** 2026-06-13
+- [RingCentral Events Bank Questions API](https://apis.io/apis/hopin/hopin-bank-questions-api/) — Bank question management
+- [RingCentral Events Booths API](https://apis.io/apis/hopin/hopin-booths-api/) — Booth management
+- [RingCentral Events Data Subscriptions API](https://apis.io/apis/hopin/hopin-data-subscriptions-api/) — Data subscription webhooks
+- [RingCentral Events API](https://apis.io/apis/hopin/hopin-events-api/) — Event management
+- [RingCentral Events Health API](https://apis.io/apis/hopin/hopin-health-api/) — Health check endpoints
+- [RingCentral Events Magic Links API](https://apis.io/apis/hopin/hopin-magic-links-api/) — Magic link management
+- [RingCentral Events Organizations API](https://apis.io/apis/hopin/hopin-organizations-api/) — Organization management
+- [RingCentral Events Registrations API](https://apis.io/apis/hopin/hopin-registrations-api/) — Event registration management
+- [RingCentral Events Reports API](https://apis.io/apis/hopin/hopin-reports-api/) — Event reporting
+- [RingCentral Events Schedule Items API](https://apis.io/apis/hopin/hopin-schedule-items-api/) — Event schedule management
+- [RingCentral Events Sessions API](https://apis.io/apis/hopin/hopin-sessions-api/) — Event session management
+- [RingCentral Events Stages API](https://apis.io/apis/hopin/hopin-stages-api/) — Event stage management
+- [RingCentral Events Templates API](https://apis.io/apis/hopin/hopin-templates-api/) — Event template management
+- [RingCentral Events Tickets API](https://apis.io/apis/hopin/hopin-tickets-api/) — Ticket management
 
-## APIs
+### Published properties
 
-### RingCentral Events API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The RingCentral Events External API provides programmatic access to manage organizations, events, sessions, stages, booths, registrations, tickets, magic links, reports, schedule items, tags, and data subscriptions. Authentication uses OAuth 2.0 with client credentials. API access is restricted to the Enterprise plan. The base URL is https://api.events.ringcentral.com.
+#### Agentic access (1)
 
-- **Human URL:** [https://developer.events.ringcentral.com/external-api](https://developer.events.ringcentral.com/external-api)
-- **Base URL:** `https://api.events.ringcentral.com`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Hopin Agentic Access](https://apis.io/agentic-access/hopin/hopin-agentic-access/)
 
-- Events
-- Organizations
-- Sessions
-- Registrations
-- Booths
-- Tickets
-- Reports
-- Webhooks
+#### JSON Schema (1)
 
-#### Properties
+The data models the API reads and writes.
 
-- [OpenAPI](openapi/openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](json-schema/ringcentral-events-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [J S O N L D Context](json-ld/ringcentral-events-context.jsonld)
+- [RingCentral Events API Schema](https://apis.io/schemas/hopin/ringcentral-events/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Ringcentral Events Context](https://apis.io/jsonld/hopin/ringcentral-events-context/)
+
+#### Examples (4)
+
+Example requests and responses.
+
+- [Create Data Subscription](https://apis.io/examples/hopin/create-data-subscription/)
+- [Create Magic Link](https://apis.io/examples/hopin/create-magic-link/)
+- [Create Registration](https://apis.io/examples/hopin/create-registration/)
+- [List Events](https://apis.io/examples/hopin/list-events/)
+
+#### Collections (14)
+
+Postman and Open Collection request collections.
+
+- [RingCentral Events Bank Questions API](https://apis.io/collections/hopin/open-hopin-bank-questions-api/)
+- [RingCentral Events Bank Questions Booths API](https://apis.io/collections/hopin/open-hopin-booths-api/)
+- [RingCentral Events Bank Questions Data Subscriptions API](https://apis.io/collections/hopin/open-hopin-data-subscriptions-api/)
+- [RingCentral Bank Questions Events API](https://apis.io/collections/hopin/open-hopin-events-api/)
+- [RingCentral Events Bank Questions Health API](https://apis.io/collections/hopin/open-hopin-health-api/)
+- [RingCentral Events Bank Questions Magic Links API](https://apis.io/collections/hopin/open-hopin-magic-links-api/)
+- [RingCentral Events Bank Questions Organizations API](https://apis.io/collections/hopin/open-hopin-organizations-api/)
+- [RingCentral Events Bank Questions Registrations API](https://apis.io/collections/hopin/open-hopin-registrations-api/)
+- [RingCentral Events Bank Questions Reports API](https://apis.io/collections/hopin/open-hopin-reports-api/)
+- [RingCentral Events Bank Questions Schedule Items API](https://apis.io/collections/hopin/open-hopin-schedule-items-api/)
+- [RingCentral Events Bank Questions Sessions API](https://apis.io/collections/hopin/open-hopin-sessions-api/)
+- [RingCentral Events Bank Questions Stages API](https://apis.io/collections/hopin/open-hopin-stages-api/)
+- [RingCentral Events Bank Questions Templates API](https://apis.io/collections/hopin/open-hopin-templates-api/)
+- [RingCentral Events Bank Questions Tickets API](https://apis.io/collections/hopin/open-hopin-tickets-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [RingCentral Events — jsonschema rules](https://apis.io/rules/hopin/hopin-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Hopin Authentication](https://apis.io/security/hopin/hopin-authentication/)
+- [Hopin Domain Security](https://apis.io/security/hopin/hopin-domain-security/)
+- [Hopin Trust Center](https://apis.io/security/hopin/hopin-trust-center/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Hopin Scopes](https://apis.io/scopes/hopin/hopin-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Plans](https://apis.io/plans/hopin/plans/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Rate Limits](https://apis.io/rate-limits/hopin/rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Finops](https://apis.io/finops/hopin/finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.ringcentral.com/)
 - [Documentation](https://developer.events.ringcentral.com/external-api)
-- [Postman Collection](https://github.com/hopin-team/hopin-external-api-collection) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [O Auth Sample](https://github.com/hopin-team/rce-external-api-oauth-sample)
-- [Changelog](https://developer.events.ringcentral.com/external-api/changelog)
-- [Release Notes](https://support.ringcentral.com/release-notes/ringex/video/events.html)
-- [Status](https://status.ringcentral.com/)
 - [Pricing](https://www.ringcentral.com/pricing/events.html)
-- [Plans](plans/plans.yml)
-- [Rate Limits](rate-limits/rate-limits.yml)
-- [Fin Ops](finops/finops.yml)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/hopin-team)
-- [Documentation](https://developer.events.ringcentral.com/external-api)
-- [Portal](https://developer.events.ringcentral.com/)
-- [Postman Collection](https://github.com/hopin-team/hopin-external-api-collection) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Authentication](https://developer.events.ringcentral.com/external-api/guides/authentication)
-- [Changelog](https://developer.events.ringcentral.com/external-api/changelog)
-- [Status](https://status.ringcentral.com/)
-- [Release Notes](https://support.ringcentral.com/release-notes/ringex/video/events.html)
-- [Pricing](https://www.ringcentral.com/pricing/events.html)
-- [Blog](https://www.ringcentral.com/us/en/blog/)
 - [Support](https://events-support.ringcentral.com/)
+- [Changelog](https://developer.events.ringcentral.com/external-api/changelog)
+- [Blog](https://www.ringcentral.com/us/en/blog/)
+- [GitHub](https://github.com/hopin-team)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** API Evangelist
-**Email:** info@apievangelist.com
-**URL:** https://apievangelist.com
+**Kin Score 33.5** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 56.5 |
+| Contract governance | 9.8 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 26.3 |
+
+**Agent readiness 23.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 31.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/hopin/](https://apis.io/providers/hopin/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for RingCentral Events: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/hopin/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
